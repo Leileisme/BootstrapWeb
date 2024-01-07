@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    /* header 營業時間與搜尋(非導覽列) */
+    .header {
+      height: 17vh;
+      width: 100%;
+      background-color: rgb(61, 61, 61);
+    }
+
+    .search_button {
+      border-radius: 30px;
+      width: 48px;
+      background-color: #5c5c5c;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .search_submit {
+      border-radius: 30px;
+      width: 60px;
+      background-color: #5c5c5c;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .btn-searchDel {
+      border-radius: 30px;
+      width: 60px;
+      background-color: #5c5c5c;
+      color: #fff;
+    }
+
+    .search-input {
+      border-radius: 30px;
+    }
+
+    /* vue 的 <transition> fade 的 class  */
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity 0.4s;
+    }
+
+    @media(min-width:768px) {
+
+      /* header 營業時間與搜尋(非導覽列) */
+      .header {
+        height: 60px;
+        line-height: 30px;
+      }
+    }
+
+    @media(min-width:1200px) {}
+  </style>
+</head>
+
+<body>
+
+  <!-- 引入vue -->
+
+  <div id="app">
+    <!-- header 營業時間與搜尋(非導覽列) -->
+
+    <div class="header text-center text-light p-3 position-relative ">
+      <p class="fs-7 text-md-start ms-lg-11">Opening times: Monday - Friday: 08AM-06PM</p>
+
+      <!-- 淡入淡出沒這麼自然 -->
+      <transition name="fade" mode="out-in">
+        <form class="d-flex position-absolute  bottom-15  bottom-md-20  end-2 end-md-1 end-lg-15 ">
+          <input v-if="searchOpen" class="search-input form-control me-2" type="search" placeholder="Search...">
+          <button v-if="searchOpen" type="submit" class="search_submit btn btn-md ">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <button type="button" class="search_button btn btn-md " @click="searchOpen=!searchOpen">
+            <i v-if="!searchOpen" class="fa-solid fa-magnifying-glass "></i>
+            <i v-else class="fa-solid fa-xmark "></i>
+          </button>
+        </form>
+
+        <!-- 點擊前 -->
+        <!-- <button v-if="!searchOpen" type="button"
+          class="search_button btn btn-md  position-absolute bottom-15 end-2   bottom-md-20 end-lg-15 "
+          @click="searchOpen=true">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button> -->
+
+        <!-- <form v-else class="d-flex position-absolute  bottom-15 end-5 end-md-3 bottom-md-20 end-lg-16">
+          <input class="search-input form-control me-2" type="search" placeholder="Search...">
+          <button type="submit" class="search_submit btn btn-md ">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <button type="button" class="btn-searchDel btn btn-md" @click="searchOpen=false">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </form> -->
+      </transition>
+    </div>
+
+
+  </div>
+
+  <!-- bootstrap主程式 -->
+  <script src="./js/bootstrap.bundle.js"></script>
+  <!-- JQ -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+    crossorigin='anonymous'></script>
+  <!-- vue -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.10/vue.global.min.js'
+    integrity='sha512-es4vSPtFlEKtmABZjNbGIagxq+4vAymgRWKhEt4C7Z+R8nHasGt/1H5JCBnUILChOXg1i1bImtqHul/LM7UxlQ=='
+    crossorigin='anonymous'></script>
+  <script>
+
+    const { ref } = Vue
+
+    Vue.createApp({
+      setup() {
+        const searchOpen = ref(false)
+
+        const searchClick = () => {
+          searchOpen.value = !searchOpen.value
+
+        }
+        return { searchOpen, searchClick }
+      }
+
+    }).mount('#app')
+
+
+  </script>
+</body>
+
+</html>
