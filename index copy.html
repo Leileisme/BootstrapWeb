@@ -13,16 +13,11 @@
   <link rel="stylesheet" href="./css/all.min.css">
   <!-- swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       list-style: none;
-      font-family: 'Noto Sans TC', sans-serif;
     }
 
     /* header 營業時間與搜尋(非導覽列) */
@@ -68,7 +63,7 @@
 
     /* 導覽列與聯絡資訊*/
     .navbar_box {
-      height: 36vh;
+      height: 30vh;
       width: 100%;
       position: relative;
     }
@@ -83,11 +78,10 @@
     }
 
     .logoText {
-      width: 100%;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.1rem;
+      left: 50%;
+      top: 20%;
+      transform: translateX(-50%);
     }
 
     .offcanvas_list a {
@@ -108,7 +102,6 @@
       left: 50%;
       transform: translateX(-50%);
       z-index: 2;
-      font-weight: 600;
     }
 
     .navbar .nav-link a:hover {
@@ -126,8 +119,8 @@
     /* 輪播圖 */
     .Carousel_box {
       width: 100%;
-      height: 70vh;
-      letter-spacing: 4px;
+      height: 50vh;
+      background-color: #fffb12;
     }
 
     .swiper {
@@ -206,23 +199,8 @@
       left: 34%;
     }
 
-    .rowSlide_1 {
+    .rowSwper {
       position: absolute;
-      left: 12%;
-    }
-
-    /* 輪播圖裡的按鈕 */
-    .swiper_btn {
-      background-color: rgb(80, 161, 114);
-      border: none;
-      box-shadow: 3px 3px 10px #8d8d8d !important;
-      font-weight: 900;
-      border: none;
-    }
-
-    .swiper_btn:hover {
-      background-color: rgb(255, 242, 120);
-      color: #000;
     }
 
     @media(min-width:576px) {
@@ -235,21 +213,19 @@
 
       /* 導覽列與聯絡資訊*/
       .navbar_box {
-        height: 20vh;
+        height: 18vh;
         width: 100%;
         position: relative;
       }
+    }
+
+    @media(min-width:720px) {
 
       /* 輪播圖 */
       .Carousel_box {
-        width: 100%;
-        height: 49vh;
-        letter-spacing: 6px;
+        height: 65vh;
       }
-
     }
-
-    @media(min-width:720px) {}
 
     @media(min-width:1200px) {
 
@@ -261,7 +237,13 @@
       .navbar {
         width: 80%;
       }
+
+      /* 輪播圖 */
+      .Carousel_box {
+        height: 77vh;
+      }
     }
+
 
     .other {
       height: 100vh;
@@ -276,7 +258,7 @@
   <div id="app">
     <!-- header 營業時間與搜尋(非導覽列) -->
     <div class="header text-center text-light p-3 position-relative ">
-      <p class="fs-7 text-sm-start ms-xl-11 fw-semibold">Opening times: Monday - Friday: 08AM-06PM</p>
+      <p class="fs-7 text-sm-start ms-xl-11">Opening times: Monday - Friday: 08AM-06PM</p>
 
       <!-- 淡入淡出沒這麼自然 -->
       <transition name="fade" mode="out-in">
@@ -366,90 +348,63 @@
   </div>
 
   <!-- 輪播圖 -->
-  <div class="Carousel_box text-xl-start">
+  <div class="Carousel_box">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="rowSlide_1 text-start">
-            <div class="fs-8 fw-bold">PROVIDING QUALITY PRODUCTS </div>
-            <div class="mt-4 " style="font-size: 2rem; font-weight: 500;">ORGANIC</div>
-            <div class="mt-1" style="font-size: 2rem; font-weight: 500;"> FRUITS</div>
-            <div class="fs-3 mt-3" style="font-weight: 300;">100% HEALTHY & </div>
-            <div class="fs-3" style="font-weight: 300;">AFFORDABLE</div>
-            <div class="mt-3 ">
-              <button type="button" class="btn btn-success btn-lg  fs-7  p-3 ps-5 pe-5 swiper_btn">ABOUT
-                US</button>
-              <!-- <button type="button" class="btn btn-success btn-sm  fs-7  p-3 ps-5 pe-5 swiper_btn">ABOUT US</button> -->
-
-            </div>
-
+          <div class="rowSwper">
+            <div class="col-12"></div>
           </div>
-          <img src="./images/slide-1.jpg">
+          <div class="swiper-slide"><img src="./images/slide-2.jpg"></div>
         </div>
-        <div class="swiper-slide">
-          <div class="rowSlide_1 text-start">
-            <div class="fs-8 fw-bold">SUMMER DISCOUNTS UP TO 40%
-            </div>
-            <div class="mt-4 " style="font-size: 2rem; font-weight: 500;">A WIDE</div>
-            <div class="mt-1" style="font-size: 2rem; font-weight: 500;">VARIETY</div>
-            <div class="fs-3 mt-3" style="font-weight: 300;">OF DIFFERENT FRUITS </div>
-            <div class="fs-3" style="font-weight: 300;">AFFORDABLE</div>
-            <div class="mt-3 "><button type="button"
-                class="btn btn-success btn-lg  fs-7   shadow p-3 ps-5 pe-5 swiper_btn">ABOUT US</button>
-            </div>
-
-          </div>
-          <img src="./images/slide-2.jpg">
-        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
     </div>
-  </div>
 
-  <!-- 其他 -->
-  <div class="other"></div>
+    <!-- 其他 -->
+    <div class="other"></div>
 
-  <!-- bootstrap主程式 -->
-  <script src="./js/bootstrap.bundle.js"></script>
-  <!-- JQ -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
-    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
-    crossorigin='anonymous'></script>
-  <!-- vue -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.10/vue.global.min.js'
-    integrity='sha512-es4vSPtFlEKtmABZjNbGIagxq+4vAymgRWKhEt4C7Z+R8nHasGt/1H5JCBnUILChOXg1i1bImtqHul/LM7UxlQ=='
-    crossorigin='anonymous'></script>
-  <!-- swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- bootstrap主程式 -->
+    <script src="./js/bootstrap.bundle.js"></script>
+    <!-- JQ -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+      integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+      crossorigin='anonymous'></script>
+    <!-- vue -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.10/vue.global.min.js'
+      integrity='sha512-es4vSPtFlEKtmABZjNbGIagxq+4vAymgRWKhEt4C7Z+R8nHasGt/1H5JCBnUILChOXg1i1bImtqHul/LM7UxlQ=='
+      crossorigin='anonymous'></script>
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <script>
+    <script>
 
-    //  Vue
-    const { ref } = Vue
+      //  Vue
+      const { ref } = Vue
 
-    Vue.createApp({
-      setup() {
-        const searchOpen = ref(false)
-        return { searchOpen }
-      }
-    }).mount('#app')
+      Vue.createApp({
+        setup() {
+          const searchOpen = ref(false)
+          return { searchOpen }
+        }
+      }).mount('#app')
 
 
-    // swiper 輪播圖
-    var swiper = new Swiper(".mySwiper", {
-      loop: true,
-      effect: 'fade', // 使用淡入淡出效果
-      autoplay: {
-        delay: 500000, // 切換間隔時間 (毫秒)
-        disableOnInteraction: false, // 使用者互動後是否停止自動播放
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
+      // swiper 輪播圖
+      var swiper = new Swiper(".mySwiper", {
+        loop: false,
+        effect: 'fade', // 使用淡入淡出效果
+        autoplay: {
+          delay: 8000, // 切換間隔時間 (毫秒)
+          disableOnInteraction: false, // 使用者互動後是否停止自動播放
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
 </body>
 
 </html>
