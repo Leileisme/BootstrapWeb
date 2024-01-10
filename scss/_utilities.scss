@@ -4,6 +4,25 @@ $utilities: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $utilities: map-merge(
   (
+    'letter-spacing': (
+      property: letter-spacing,
+      class: spacing,
+      values: (
+        1: 0.4rem,
+        2: 0.5rem,
+        3: 0.8rem,
+        4: 1rem,
+        5: 1.1rem,
+        6: 1.2rem,
+        7: 1.3rem,
+        8: 1.5rem,
+        9: 2rem,
+        10: 2.5rem,
+        11: 3rem,
+        12: 4rem,
+        13: 5rem
+      )
+    ),
     // scss-docs-start utils-vertical-align
     'align':
       (

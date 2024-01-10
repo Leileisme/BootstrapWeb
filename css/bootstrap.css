@@ -8102,6 +8102,58 @@ textarea.form-control-lg {
   opacity: 0.25;
 }
 
+.spacing-1 {
+  letter-spacing: 0.4rem !important;
+}
+
+.spacing-2 {
+  letter-spacing: 0.5rem !important;
+}
+
+.spacing-3 {
+  letter-spacing: 0.8rem !important;
+}
+
+.spacing-4 {
+  letter-spacing: 1rem !important;
+}
+
+.spacing-5 {
+  letter-spacing: 1.1rem !important;
+}
+
+.spacing-6 {
+  letter-spacing: 1.2rem !important;
+}
+
+.spacing-7 {
+  letter-spacing: 1.3rem !important;
+}
+
+.spacing-8 {
+  letter-spacing: 1.5rem !important;
+}
+
+.spacing-9 {
+  letter-spacing: 2rem !important;
+}
+
+.spacing-10 {
+  letter-spacing: 2.5rem !important;
+}
+
+.spacing-11 {
+  letter-spacing: 3rem !important;
+}
+
+.spacing-12 {
+  letter-spacing: 4rem !important;
+}
+
+.spacing-13 {
+  letter-spacing: 5rem !important;
+}
+
 .align-baseline {
   vertical-align: baseline !important;
 }

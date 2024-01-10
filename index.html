@@ -225,6 +225,29 @@
       color: #000;
     }
 
+    /* 橫幅 */
+    .banner {
+      height: 120vh;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .banner img {
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .banner_item {
+      width: 95%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     @media(min-width:576px) {
 
       /* header 營業時間與搜尋(非導覽列) */
@@ -247,9 +270,19 @@
         letter-spacing: 6px;
       }
 
+      /* 橫幅 */
+      .banner {
+        height: 100vh;
+      }
     }
 
-    @media(min-width:720px) {}
+    @media(min-width:768px) {
+
+      /* 橫幅 */
+      .banner {
+        height: 60vh;
+      }
+    }
 
     @media(min-width:1200px) {
 
@@ -406,6 +439,83 @@
       <div class="swiper-button-prev"></div>
     </div>
   </div>
+
+  <!-- banner/icon -->
+  <div class="banner">
+    <div class="banner_item row" style="margin-left:0">
+
+      <div class="col-12 text-center d-sm-none d-block" style="font-size: 3.5rem; ">
+        <div class="fw-light spacing-2" style="margin-top: -2rem;">WHY</div>
+        <div class="fw-semibold spacing-1" style="margin-top: -2rem;">ORGANIC?</div>
+      </div>
+
+      <div class="col-12 text-center d-none d-sm-block" style="font-size: 3.5rem; ">
+        <span class="fw-light spacing-2" style="margin-top: -2rem;">WHY</span>
+        <span class="fw-semibold spacing-1" style="margin-top: -2rem;">ORGANIC?</span>
+      </div>
+
+
+
+      <div class="col-12 col-md-6">
+        <div class="card text-center mt-3 mt-md-4" style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
+          <div class="card-body">
+            <div class="mb-xxl-3">
+              <i class="fa-regular fa-lemon" style="font-size: 3.5rem;"></i>
+            </div>
+            <div class=" card-title fs-2 spacing-1 fw-semibold">ALWAYS FRESH</div>
+            <p class="card-text fs-7" style="color: #999;">We deliver our products always fresh & organic so that
+              you could enjoy your meal.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-6">
+        <div class="card text-center mt-4" style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
+          <div class="card-body">
+            <div class="mb-xxl-3">
+              <i class="fa-regular fa-flag" style="font-size: 3.5rem;"></i>
+            </div>
+            <div class=" card-title fs-2 spacing-1 fw-semibold">MODERN FARM</div>
+            <p class="card-text fs-7" style="color: #999;">Our farm combines modern technologies, innovations, and
+              trusted farming traditions. </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="card text-center mt-4" style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
+          <div class="card-body">
+            <div class="mb-xxl-3">
+              <i class="fa-brands fa-viadeo" style="font-size: 3.5rem;"></i>
+            </div>
+            <div class=" card-title fs-2 spacing-1 fw-semibold">100% ORGANIC</div>
+            <p class="card-text fs-7" style="color: #999;">We adhere to our organic philosophy, which implies avoiding
+              pesticides. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="card text-center mt-4" style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
+          <div class="card-body">
+            <div class="mb-xxl-3">
+              <i class="fa-brands fa-tencent-weibo" style="font-size: 3.5rem;"></i>
+            </div>
+            <div class=" card-title fs-2 spacing-1 fw-semibold">NO PESTICIDES </div>
+            <p class="card-text fs-7" style="color: #999;">Our farming technologies are designed to avoid any pesticides
+              in the fruits we offer. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <img src="./images/bg-image-1.jpg">
+  </div>
+
+
 
   <!-- 其他 -->
   <div class="other"></div>
