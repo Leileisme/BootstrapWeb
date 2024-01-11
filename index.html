@@ -227,7 +227,7 @@
 
     /* 橫幅 */
     .banner {
-      height: 120vh;
+      height: 130vh;
       width: 100%;
       overflow: hidden;
       position: relative;
@@ -246,6 +246,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      /* border: 1px solid red; */
     }
 
     @media(min-width:576px) {
@@ -272,7 +273,7 @@
 
       /* 橫幅 */
       .banner {
-        height: 100vh;
+        height: 110vh;
       }
     }
 
@@ -280,7 +281,12 @@
 
       /* 橫幅 */
       .banner {
-        height: 60vh;
+        height: 85vh;
+      }
+
+      /* 橫幅 */
+      .card {
+        text-align: left !important;
       }
     }
 
@@ -294,6 +300,18 @@
       .navbar {
         width: 80%;
       }
+
+      /* 橫幅 */
+      .banner_item {
+        position: absolute;
+        width: 48%;
+        top: 50%;
+        left: 52%;
+        transform: translate(0, -50%);
+      }
+
+
+
     }
 
     .other {
@@ -343,7 +361,7 @@
         <div class="col-sm-3 d-none d-sm-block">
           <img src="./images/logo-1.webp" alt="logo" class="mb-2 ms-md-3 ms-sm-2">
         </div>
-        <div class="col-sm-4 offset-sm-1  col-md-3 offset-md-3 col-lg-2 offset-lg-5  text-center d-none d-sm-block">
+        <div class="col-sm-4 offset-sm-1  col-md-3 offset-md-3 col-lg-3 offset-lg-4  text-center d-none d-sm-block">
           <div>523 Sylvan Ave, 5th Floor</div>
           <div>Mountain View, CA 94041 USA</div>
         </div>
@@ -441,43 +459,42 @@
   </div>
 
   <!-- banner/icon -->
-  <div class="banner">
-    <div class="banner_item row" style="margin-left:0">
+  <div class="banner ">
+    <div class="banner_item row " style="margin-left:0">
 
-      <div class="col-12 text-center d-sm-none d-block" style="font-size: 3.5rem; ">
+      <div class="col-12  d-sm-none d-block text-center" style="font-size: 3.5rem; ">
         <div class="fw-light spacing-2" style="margin-top: -2rem;">WHY</div>
-        <div class="fw-semibold spacing-1" style="margin-top: -2rem;">ORGANIC?</div>
+        <div class="fw-semibold spacing-4" style="margin-top: -2rem;">ORGANIC?</div>
       </div>
 
-      <div class="col-12 text-center d-none d-sm-block" style="font-size: 3.5rem; ">
+      <div class="col-12 d-none d-sm-block text-center" style="font-size: 3.5rem; ">
         <span class="fw-light spacing-2" style="margin-top: -2rem;">WHY</span>
         <span class="fw-semibold spacing-1" style="margin-top: -2rem;">ORGANIC?</span>
       </div>
 
 
 
-      <div class="col-12 col-md-6">
-        <div class="card text-center mt-3 mt-md-4" style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
+      <div class="col-12 col-md-6 ">
+        <div class="card text-center mt-3 mt-md-4 " style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
           <div class="card-body">
             <div class="mb-xxl-3">
               <i class="fa-regular fa-lemon" style="font-size: 3.5rem;"></i>
             </div>
-            <div class=" card-title fs-2 spacing-1 fw-semibold">ALWAYS FRESH</div>
-            <p class="card-text fs-7" style="color: #999;">We deliver our products always fresh & organic so that
-              you could enjoy your meal.
-            </p>
+            <div class=" card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">ALWAYS FRESH</div>
+            <p class="card-text fs-7 " style="color: #999;">We deliver our products always fresh & organic so
+              that you could enjoy your meal. </p>
           </div>
         </div>
       </div>
 
 
       <div class="col-12 col-md-6">
-        <div class="card text-center mt-4" style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
+        <div class="card text-center mt-4 " style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
           <div class="card-body">
             <div class="mb-xxl-3">
               <i class="fa-regular fa-flag" style="font-size: 3.5rem;"></i>
             </div>
-            <div class=" card-title fs-2 spacing-1 fw-semibold">MODERN FARM</div>
+            <div class=" card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">MODERN FARM</div>
             <p class="card-text fs-7" style="color: #999;">Our farm combines modern technologies, innovations, and
               trusted farming traditions. </p>
           </div>
@@ -485,24 +502,24 @@
       </div>
 
       <div class="col-12 col-md-6">
-        <div class="card text-center mt-4" style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
+        <div class="card text-center mt-4 " style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
           <div class="card-body">
             <div class="mb-xxl-3">
               <i class="fa-brands fa-viadeo" style="font-size: 3.5rem;"></i>
             </div>
-            <div class=" card-title fs-2 spacing-1 fw-semibold">100% ORGANIC</div>
+            <div class=" card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">100% ORGANIC</div>
             <p class="card-text fs-7" style="color: #999;">We adhere to our organic philosophy, which implies avoiding
               pesticides. </p>
           </div>
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="card text-center mt-4" style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
+        <div class="card text-center mt-4 " style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
           <div class="card-body">
             <div class="mb-xxl-3">
               <i class="fa-brands fa-tencent-weibo" style="font-size: 3.5rem;"></i>
             </div>
-            <div class=" card-title fs-2 spacing-1 fw-semibold">NO PESTICIDES </div>
+            <div class=" card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">NO PESTICIDES </div>
             <p class="card-text fs-7" style="color: #999;">Our farming technologies are designed to avoid any pesticides
               in the fruits we offer. </p>
           </div>
@@ -547,18 +564,18 @@
 
 
     // swiper 輪播圖
-    var swiper = new Swiper(".mySwiper", {
-      loop: true,
-      effect: 'fade', // 使用淡入淡出效果
-      autoplay: {
-        delay: 500000, // 切換間隔時間 (毫秒)
-        disableOnInteraction: false, // 使用者互動後是否停止自動播放
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+    // var swiper = new Swiper(".mySwiper", {
+    //   loop: true,
+    //   effect: 'fade', // 使用淡入淡出效果
+    //   autoplay: {
+    //     delay: 500000, // 切換間隔時間 (毫秒)
+    //     disableOnInteraction: false, // 使用者互動後是否停止自動播放
+    //   },
+    //   navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    //   },
+    // });
   </script>
 </body>
 

@@ -8103,54 +8103,66 @@ textarea.form-control-lg {
 }
 
 .spacing-1 {
-  letter-spacing: 0.4rem !important;
+  letter-spacing: 0.1rem !important;
 }
 
 .spacing-2 {
-  letter-spacing: 0.5rem !important;
+  letter-spacing: 0.2rem !important;
 }
 
 .spacing-3 {
-  letter-spacing: 0.8rem !important;
+  letter-spacing: 0.3rem !important;
 }
 
 .spacing-4 {
-  letter-spacing: 1rem !important;
+  letter-spacing: 0.4rem !important;
 }
 
 .spacing-5 {
-  letter-spacing: 1.1rem !important;
+  letter-spacing: 0.5rem !important;
 }
 
 .spacing-6 {
-  letter-spacing: 1.2rem !important;
+  letter-spacing: 0.8rem !important;
 }
 
 .spacing-7 {
-  letter-spacing: 1.3rem !important;
+  letter-spacing: 1rem !important;
 }
 
 .spacing-8 {
-  letter-spacing: 1.5rem !important;
+  letter-spacing: 1.1rem !important;
 }
 
 .spacing-9 {
-  letter-spacing: 2rem !important;
+  letter-spacing: 1.2rem !important;
 }
 
 .spacing-10 {
-  letter-spacing: 2.5rem !important;
+  letter-spacing: 1.3rem !important;
 }
 
 .spacing-11 {
-  letter-spacing: 3rem !important;
+  letter-spacing: 1.5rem !important;
 }
 
 .spacing-12 {
-  letter-spacing: 4rem !important;
+  letter-spacing: 2rem !important;
 }
 
 .spacing-13 {
+  letter-spacing: 2.5rem !important;
+}
+
+.spacing-14 {
+  letter-spacing: 3rem !important;
+}
+
+.spacing-15 {
+  letter-spacing: 4rem !important;
+}
+
+.spacing-16 {
   letter-spacing: 5rem !important;
 }
 
@@ -8689,6 +8701,14 @@ textarea.form-control-lg {
 
 .w-75 {
   width: 75% !important;
+}
+
+.w-80 {
+  width: 80% !important;
+}
+
+.w-90 {
+  width: 90% !important;
 }
 
 .w-100 {
@@ -10202,6 +10222,54 @@ textarea.form-control-lg {
 }
 
 @media (min-width: 576px) {
+  .spacing-sm-1 {
+    letter-spacing: 0.1rem !important;
+  }
+  .spacing-sm-2 {
+    letter-spacing: 0.2rem !important;
+  }
+  .spacing-sm-3 {
+    letter-spacing: 0.3rem !important;
+  }
+  .spacing-sm-4 {
+    letter-spacing: 0.4rem !important;
+  }
+  .spacing-sm-5 {
+    letter-spacing: 0.5rem !important;
+  }
+  .spacing-sm-6 {
+    letter-spacing: 0.8rem !important;
+  }
+  .spacing-sm-7 {
+    letter-spacing: 1rem !important;
+  }
+  .spacing-sm-8 {
+    letter-spacing: 1.1rem !important;
+  }
+  .spacing-sm-9 {
+    letter-spacing: 1.2rem !important;
+  }
+  .spacing-sm-10 {
+    letter-spacing: 1.3rem !important;
+  }
+  .spacing-sm-11 {
+    letter-spacing: 1.5rem !important;
+  }
+  .spacing-sm-12 {
+    letter-spacing: 2rem !important;
+  }
+  .spacing-sm-13 {
+    letter-spacing: 2.5rem !important;
+  }
+  .spacing-sm-14 {
+    letter-spacing: 3rem !important;
+  }
+  .spacing-sm-15 {
+    letter-spacing: 4rem !important;
+  }
+  .spacing-sm-16 {
+    letter-spacing: 5rem !important;
+  }
   .float-sm-start {
     float: left !important;
   }
@@ -10412,6 +10480,27 @@ textarea.form-control-lg {
   }
   .end-sm-100 {
     right: 100% !important;
+  }
+  .w-sm-25 {
+    width: 25% !important;
+  }
+  .w-sm-50 {
+    width: 50% !important;
+  }
+  .w-sm-75 {
+    width: 75% !important;
+  }
+  .w-sm-80 {
+    width: 80% !important;
+  }
+  .w-sm-90 {
+    width: 90% !important;
+  }
+  .w-sm-100 {
+    width: 100% !important;
+  }
+  .w-sm-auto {
+    width: auto !important;
   }
   .flex-sm-fill {
     -webkit-box-flex: 1 !important;
@@ -11263,6 +11352,54 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 768px) {
+  .spacing-md-1 {
+    letter-spacing: 0.1rem !important;
+  }
+  .spacing-md-2 {
+    letter-spacing: 0.2rem !important;
+  }
+  .spacing-md-3 {
+    letter-spacing: 0.3rem !important;
+  }
+  .spacing-md-4 {
+    letter-spacing: 0.4rem !important;
+  }
+  .spacing-md-5 {
+    letter-spacing: 0.5rem !important;
+  }
+  .spacing-md-6 {
+    letter-spacing: 0.8rem !important;
+  }
+  .spacing-md-7 {
+    letter-spacing: 1rem !important;
+  }
+  .spacing-md-8 {
+    letter-spacing: 1.1rem !important;
+  }
+  .spacing-md-9 {
+    letter-spacing: 1.2rem !important;
+  }
+  .spacing-md-10 {
+    letter-spacing: 1.3rem !important;
+  }
+  .spacing-md-11 {
+    letter-spacing: 1.5rem !important;
+  }
+  .spacing-md-12 {
+    letter-spacing: 2rem !important;
+  }
+  .spacing-md-13 {
+    letter-spacing: 2.5rem !important;
+  }
+  .spacing-md-14 {
+    letter-spacing: 3rem !important;
+  }
+  .spacing-md-15 {
+    letter-spacing: 4rem !important;
+  }
+  .spacing-md-16 {
+    letter-spacing: 5rem !important;
+  }
   .float-md-start {
     float: left !important;
   }
@@ -11473,6 +11610,27 @@ textarea.form-control-lg {
   }
   .end-md-100 {
     right: 100% !important;
+  }
+  .w-md-25 {
+    width: 25% !important;
+  }
+  .w-md-50 {
+    width: 50% !important;
+  }
+  .w-md-75 {
+    width: 75% !important;
+  }
+  .w-md-80 {
+    width: 80% !important;
+  }
+  .w-md-90 {
+    width: 90% !important;
+  }
+  .w-md-100 {
+    width: 100% !important;
+  }
+  .w-md-auto {
+    width: auto !important;
   }
   .flex-md-fill {
     -webkit-box-flex: 1 !important;
@@ -12324,6 +12482,54 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 992px) {
+  .spacing-lg-1 {
+    letter-spacing: 0.1rem !important;
+  }
+  .spacing-lg-2 {
+    letter-spacing: 0.2rem !important;
+  }
+  .spacing-lg-3 {
+    letter-spacing: 0.3rem !important;
+  }
+  .spacing-lg-4 {
+    letter-spacing: 0.4rem !important;
+  }
+  .spacing-lg-5 {
+    letter-spacing: 0.5rem !important;
+  }
+  .spacing-lg-6 {
+    letter-spacing: 0.8rem !important;
+  }
+  .spacing-lg-7 {
+    letter-spacing: 1rem !important;
+  }
+  .spacing-lg-8 {
+    letter-spacing: 1.1rem !important;
+  }
+  .spacing-lg-9 {
+    letter-spacing: 1.2rem !important;
+  }
+  .spacing-lg-10 {
+    letter-spacing: 1.3rem !important;
+  }
+  .spacing-lg-11 {
+    letter-spacing: 1.5rem !important;
+  }
+  .spacing-lg-12 {
+    letter-spacing: 2rem !important;
+  }
+  .spacing-lg-13 {
+    letter-spacing: 2.5rem !important;
+  }
+  .spacing-lg-14 {
+    letter-spacing: 3rem !important;
+  }
+  .spacing-lg-15 {
+    letter-spacing: 4rem !important;
+  }
+  .spacing-lg-16 {
+    letter-spacing: 5rem !important;
+  }
   .float-lg-start {
     float: left !important;
   }
@@ -12534,6 +12740,27 @@ textarea.form-control-lg {
   }
   .end-lg-100 {
     right: 100% !important;
+  }
+  .w-lg-25 {
+    width: 25% !important;
+  }
+  .w-lg-50 {
+    width: 50% !important;
+  }
+  .w-lg-75 {
+    width: 75% !important;
+  }
+  .w-lg-80 {
+    width: 80% !important;
+  }
+  .w-lg-90 {
+    width: 90% !important;
+  }
+  .w-lg-100 {
+    width: 100% !important;
+  }
+  .w-lg-auto {
+    width: auto !important;
   }
   .flex-lg-fill {
     -webkit-box-flex: 1 !important;
@@ -13385,6 +13612,54 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 1200px) {
+  .spacing-xl-1 {
+    letter-spacing: 0.1rem !important;
+  }
+  .spacing-xl-2 {
+    letter-spacing: 0.2rem !important;
+  }
+  .spacing-xl-3 {
+    letter-spacing: 0.3rem !important;
+  }
+  .spacing-xl-4 {
+    letter-spacing: 0.4rem !important;
+  }
+  .spacing-xl-5 {
+    letter-spacing: 0.5rem !important;
+  }
+  .spacing-xl-6 {
+    letter-spacing: 0.8rem !important;
+  }
+  .spacing-xl-7 {
+    letter-spacing: 1rem !important;
+  }
+  .spacing-xl-8 {
+    letter-spacing: 1.1rem !important;
+  }
+  .spacing-xl-9 {
+    letter-spacing: 1.2rem !important;
+  }
+  .spacing-xl-10 {
+    letter-spacing: 1.3rem !important;
+  }
+  .spacing-xl-11 {
+    letter-spacing: 1.5rem !important;
+  }
+  .spacing-xl-12 {
+    letter-spacing: 2rem !important;
+  }
+  .spacing-xl-13 {
+    letter-spacing: 2.5rem !important;
+  }
+  .spacing-xl-14 {
+    letter-spacing: 3rem !important;
+  }
+  .spacing-xl-15 {
+    letter-spacing: 4rem !important;
+  }
+  .spacing-xl-16 {
+    letter-spacing: 5rem !important;
+  }
   .float-xl-start {
     float: left !important;
   }
@@ -13595,6 +13870,27 @@ textarea.form-control-lg {
   }
   .end-xl-100 {
     right: 100% !important;
+  }
+  .w-xl-25 {
+    width: 25% !important;
+  }
+  .w-xl-50 {
+    width: 50% !important;
+  }
+  .w-xl-75 {
+    width: 75% !important;
+  }
+  .w-xl-80 {
+    width: 80% !important;
+  }
+  .w-xl-90 {
+    width: 90% !important;
+  }
+  .w-xl-100 {
+    width: 100% !important;
+  }
+  .w-xl-auto {
+    width: auto !important;
   }
   .flex-xl-fill {
     -webkit-box-flex: 1 !important;
@@ -14446,6 +14742,54 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 1400px) {
+  .spacing-xxl-1 {
+    letter-spacing: 0.1rem !important;
+  }
+  .spacing-xxl-2 {
+    letter-spacing: 0.2rem !important;
+  }
+  .spacing-xxl-3 {
+    letter-spacing: 0.3rem !important;
+  }
+  .spacing-xxl-4 {
+    letter-spacing: 0.4rem !important;
+  }
+  .spacing-xxl-5 {
+    letter-spacing: 0.5rem !important;
+  }
+  .spacing-xxl-6 {
+    letter-spacing: 0.8rem !important;
+  }
+  .spacing-xxl-7 {
+    letter-spacing: 1rem !important;
+  }
+  .spacing-xxl-8 {
+    letter-spacing: 1.1rem !important;
+  }
+  .spacing-xxl-9 {
+    letter-spacing: 1.2rem !important;
+  }
+  .spacing-xxl-10 {
+    letter-spacing: 1.3rem !important;
+  }
+  .spacing-xxl-11 {
+    letter-spacing: 1.5rem !important;
+  }
+  .spacing-xxl-12 {
+    letter-spacing: 2rem !important;
+  }
+  .spacing-xxl-13 {
+    letter-spacing: 2.5rem !important;
+  }
+  .spacing-xxl-14 {
+    letter-spacing: 3rem !important;
+  }
+  .spacing-xxl-15 {
+    letter-spacing: 4rem !important;
+  }
+  .spacing-xxl-16 {
+    letter-spacing: 5rem !important;
+  }
   .float-xxl-start {
     float: left !important;
   }
@@ -14656,6 +15000,27 @@ textarea.form-control-lg {
   }
   .end-xxl-100 {
     right: 100% !important;
+  }
+  .w-xxl-25 {
+    width: 25% !important;
+  }
+  .w-xxl-50 {
+    width: 50% !important;
+  }
+  .w-xxl-75 {
+    width: 75% !important;
+  }
+  .w-xxl-80 {
+    width: 80% !important;
+  }
+  .w-xxl-90 {
+    width: 90% !important;
+  }
+  .w-xxl-100 {
+    width: 100% !important;
+  }
+  .w-xxl-auto {
+    width: auto !important;
   }
   .flex-xxl-fill {
     -webkit-box-flex: 1 !important;
