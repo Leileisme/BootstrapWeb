@@ -1,582 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <!-- bootstrap icon -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!-- Font Awesome  icon-->
-  <link rel="stylesheet" href="./css/all.min.css">
-  <!-- swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-family: 'Noto Sans TC', sans-serif;
-    }
-
-    /* header 營業時間與搜尋(非導覽列) */
-    .header {
-      height: 17vh;
-      width: 100%;
-      background-color: rgb(61, 61, 61);
-    }
-
-    .search_button {
-      border-radius: 30px;
-      width: 48px;
-      background-color: #5c5c5c;
-      color: #fff;
-      margin-right: 10px;
-    }
-
-    .search_submit {
-      border-radius: 30px;
-      width: 60px;
-      background-color: #5c5c5c;
-      color: #fff;
-      margin-right: 10px;
-    }
-
-    .btn-searchDel {
-      border-radius: 30px;
-      width: 60px;
-      background-color: #5c5c5c;
-      color: #fff;
-    }
-
-    .search-input {
-      border-radius: 30px;
-    }
-
-    /* vue 的 <transition> fade 的 class  */
-    .fade-enter-active,
-    .fade-leave-active {
-      transition: opacity 0.4s;
-    }
-
-
-    /* 導覽列與聯絡資訊*/
-    .navbar_box {
-      height: 36vh;
-      width: 100%;
-      position: relative;
-    }
-
-    .navbar_box a {
-      color: black;
-      text-decoration: none;
-    }
-
-    .navbar_box a:hover {
-      color: rgb(0, 197, 89);
-    }
-
-    .logoText {
-      width: 100%;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.1rem;
-    }
-
-    .offcanvas_list a {
-      color: rgb(255, 255, 255);
-      text-decoration: none;
-      line-height: 2.5;
-    }
-
-    .offcanvas_list a:hover {
-      color: #fffb12;
-    }
-
-    /* sm時出現的導覽列 */
-    .navbar {
-      width: 98%;
-      position: absolute;
-      bottom: -15%;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      font-weight: 600;
-    }
-
-    .navbar .nav-link a:hover {
-      color: #fffb12 !important;
-    }
-
-    /* sm時出現的line */
-    .line {
-      float: left;
-      width: 1px;
-      height: 100%;
-      background-color: #cccccc;
-    }
-
-    /* 輪播圖 */
-    .Carousel_box {
-      width: 100%;
-      height: 70vh;
-      letter-spacing: 4px;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper .swiper-button-prev,
-    .swiper .swiper-button-next {
-      opacity: 0;
-      transition: 0.3s;
-    }
-
-    .mySwiper:hover .swiper-button-prev,
-    .mySwiper:hover .swiper-button-next {
-      opacity: 1;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swiper-slide h1 {
-      position: absolute;
-      top: 100px;
-      left: 100px;
-    }
-
-    .swiper-slide p {
-      position: absolute;
-      top: 300px;
-      left: 100px;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-      width: 2.5rem;
-      height: 2.5rem;
-      position: absolute;
-      background-color: #fff;
-      border-radius: 50%;
-    }
-
-    .swiper-button-next::after {
-      font-size: 1.1rem;
-      font-weight: bolder;
-      color: #333;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 28%;
-      left: 40%;
-    }
-
-    .swiper-button-prev::after {
-      font-size: 1.1rem;
-      font-weight: bolder;
-      color: #333;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 28%;
-      left: 34%;
-    }
-
-    .rowSlide_1 {
-      position: absolute;
-      left: 12%;
-    }
-
-    /* 輪播圖裡的按鈕 */
-    .swiper_btn {
-      background-color: rgb(80, 161, 114);
-      border: none;
-      box-shadow: 3px 3px 10px #8d8d8d !important;
-      font-weight: 900;
-      border: none;
-    }
-
-    .swiper_btn:hover {
-      background-color: rgb(255, 242, 120);
-      color: #000;
-    }
-
-    /* 橫幅 */
-    .banner {
-      height: 130vh;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .banner img {
-      object-fit: cover;
-      object-position: center;
-      height: 100%;
-      width: 100%;
-    }
-
-    .banner_item {
-      width: 95%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      /* border: 1px solid red; */
-    }
-
-    @media(min-width:576px) {
-
-      /* header 營業時間與搜尋(非導覽列) */
-      .header {
-        height: 60px;
-        line-height: 30px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Font Awesome  icon-->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 我的CSS -->
+    <link rel="stylesheet" href="./css/mystyle.css" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <style>
+      .other {
+        height: 100vh;
+        background-color: rgb(255, 242, 120);
       }
+    </style>
+  </head>
 
-      /* 導覽列與聯絡資訊*/
-      .navbar_box {
-        height: 20vh;
-        width: 100%;
-        position: relative;
-      }
+  <body>
+    <!-- 引入vue -->
 
-      /* 輪播圖 */
-      .Carousel_box {
-        width: 100%;
-        height: 49vh;
-        letter-spacing: 6px;
-      }
+    <div id="app">
+      <!-- header 營業時間與搜尋(非導覽列) -->
+      <div class="header text-center text-light p-3 position-relative">
+        <p class="fs-7 text-sm-start ms-xl-11 fw-semibold">Opening times: Monday - Friday: 08AM-06PM</p>
 
-      /* 橫幅 */
-      .banner {
-        height: 110vh;
-      }
-    }
+        <!-- 淡入淡出沒這麼自然 -->
+        <transition name="fade" mode="out-in">
+          <form class="d-flex position-absolute bottom-15 bottom-sm-20 end-2 end-sm-1 end-xl-15">
+            <input v-if="searchOpen" class="search-input form-control me-2" type="search" placeholder="Search..." />
+            <button v-if="searchOpen" type="submit" class="search_submit btn btn-sm">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
 
-    @media(min-width:768px) {
-
-      /* 橫幅 */
-      .banner {
-        height: 85vh;
-      }
-
-      /* 橫幅 */
-      .card {
-        text-align: left !important;
-      }
-    }
-
-    @media(min-width:1200px) {
-
-      /* 導覽列與聯絡資訊*/
-      .navbar_box {
-        padding: 0 10%;
-      }
-
-      .navbar {
-        width: 80%;
-      }
-
-      /* 橫幅 */
-      .banner_item {
-        position: absolute;
-        width: 48%;
-        top: 50%;
-        left: 52%;
-        transform: translate(0, -50%);
-      }
-
-
-
-    }
-
-    .other {
-      height: 100vh;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- 引入vue -->
-
-  <div id="app">
-    <!-- header 營業時間與搜尋(非導覽列) -->
-    <div class="header text-center text-light p-3 position-relative ">
-      <p class="fs-7 text-sm-start ms-xl-11 fw-semibold">Opening times: Monday - Friday: 08AM-06PM</p>
-
-      <!-- 淡入淡出沒這麼自然 -->
-      <transition name="fade" mode="out-in">
-        <form class="d-flex position-absolute  bottom-15  bottom-sm-20  end-2 end-sm-1 end-xl-15 ">
-          <input v-if="searchOpen" class="search-input form-control me-2" type="search" placeholder="Search...">
-          <button v-if="searchOpen" type="submit" class="search_submit btn btn-sm ">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-
-          <button type="button" class="search_button btn btn-sm " @click="searchOpen=!searchOpen">
-            <i v-if="!searchOpen" class="fa-solid fa-magnifying-glass "></i>
-            <i v-else class="fa-solid fa-xmark "></i>
-          </button>
-        </form>
-      </transition>
-    </div>
-
-    <!-- 導覽列與聯絡資訊 -->
-    <div class="navbar_box">
-      <!-- 手機版顯示 - logo -->
-      <div class="logoText text-center  d-block d-sm-none">
-        <img src="./images/logo-1.webp" alt="logo" class="mb-2">
-        <div>523 Sylvan Ave, 5th Floor</div>
-        <div>Mountain View, CA 94041 USA</div>
-        <div><a href="#">+1 (844) 123 456 78</a></div>
-        <div><a href="#">info@demolink.org</a></div>
+            <button type="button" class="search_button btn btn-sm" @click="searchOpen=!searchOpen">
+              <i v-if="!searchOpen" class="fa-solid fa-magnifying-glass"></i>
+              <i v-else class="fa-solid fa-xmark"></i>
+            </button>
+          </form>
+        </transition>
       </div>
 
-      <!-- sm尺寸開始顯示 - logo -->
-      <div class="row fs-7 pt-sm-5">
-        <div class="col-sm-3 d-none d-sm-block">
-          <img src="./images/logo-1.webp" alt="logo" class="mb-2 ms-md-3 ms-sm-2">
-        </div>
-        <div class="col-sm-4 offset-sm-1  col-md-3 offset-md-3 col-lg-3 offset-lg-4  text-center d-none d-sm-block">
+      <!-- 導覽列與聯絡資訊 -->
+      <div class="navbar_box">
+        <!-- 手機版顯示 - logo -->
+        <div class="logoText text-center d-block d-sm-none">
+          <img src="./images/logo-1.webp" alt="logo" class="mb-2" />
           <div>523 Sylvan Ave, 5th Floor</div>
           <div>Mountain View, CA 94041 USA</div>
-        </div>
-        <!-- <div class="col-3"></div> -->
-        <div class="col-sm-4 col-md-3 col-lg-2 text-center d-none d-sm-block">
-          <div class="line"></div>
           <div><a href="#">+1 (844) 123 456 78</a></div>
           <div><a href="#">info@demolink.org</a></div>
         </div>
-      </div>
 
-      <!-- 手機板顯示 -導覽列 -->
-      <div class="d-sm-none">
-        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
-          style="position: absolute; bottom: 5%; left: 5%;">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <div class="offcanvas offcanvas-start w-75 bg-bg-gray" tabindex="-1" id="offcanvas">
-          <div class="offcanvas-body  ">
-            <!-- 關閉按鈕 -->
-            <button type="button" class="float-end btn text-white" data-bs-dismiss="offcanvas">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
+        <!-- sm尺寸開始顯示 - logo -->
+        <div class="row fs-7 pt-sm-5">
+          <div class="col-sm-3 d-none d-sm-block">
+            <img src="./images/logo-1.webp" alt="logo" class="mb-2 ms-md-3 ms-sm-2" />
+          </div>
+          <div class="col-sm-4 offset-sm-1 col-md-3 offset-md-3 col-lg-3 offset-lg-4 text-center d-none d-sm-block">
+            <div>523 Sylvan Ave, 5th Floor</div>
+            <div>Mountain View, CA 94041 USA</div>
+          </div>
+          <!-- <div class="col-3"></div> -->
+          <div class="col-sm-4 col-md-3 col-lg-2 text-center d-none d-sm-block">
+            <div class="line"></div>
+            <div><a href="#">+1 (844) 123 456 78</a></div>
+            <div><a href="#">info@demolink.org</a></div>
+          </div>
+        </div>
 
+        <!-- 手機板顯示 -導覽列 -->
+        <div class="d-sm-none">
+          <button
+            class="btn"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas"
+            style="position: absolute; bottom: 5%; left: 5%"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="offcanvas offcanvas-start w-75 bg-bg-gray" tabindex="-1" id="offcanvas">
+            <div class="offcanvas-body">
+              <!-- 關閉按鈕 -->
+              <button type="button" class="float-end btn text-white" data-bs-dismiss="offcanvas">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
 
+              <!-- 列表 -->
+              <ul class="offcanvas_list">
+                <li><a href="#" style="color: #fffb12">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">TEAM</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">BLOG</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-            <!-- 列表 -->
-            <ul class="offcanvas_list ">
-              <li><a href="#" style="color: #fffb12 ;">HOME</a></li>
-              <li><a href="#">ABOUT</a></li>
-              <li><a href="#">TEAM</a></li>
-              <li><a href="#">GALLERY</a></li>
-              <li><a href="#">BLOG</a></li>
+        <!-- sm尺寸開始顯示 - 導覽列  -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-light bg-bg-gray rounded-5 d-none d-sm-block">
+          <div class="container-fluid">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-link active ms-md-5 ms-4"><a href="#" style="color: #fffb12">HOME</a></li>
+              <li class="nav-link active ms-md-5 ms-4"><a href="#" class="text-white">ABOUT</a></li>
+              <li class="nav-link active ms-md-5 ms-4"><a href="#" class="text-white">TEAM</a></li>
+              <li class="nav-link active ms-md-5 ms-4"><a href="#" class="text-white">GALLERY</a></li>
+              <li class="nav-link active ms-md-5 ms-4"><a href="#" class="text-white">BLOG</a></li>
             </ul>
           </div>
-        </div>
-      </div>
-
-      <!-- sm尺寸開始顯示 - 導覽列  -->
-      <nav class="navbar navbar-expand-sm navbar-light bg-light bg-bg-gray rounded-5 d-none d-sm-block">
-        <div class="container-fluid">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-link active ms-md-5 ms-4 "><a href="#" style="color: #fffb12 ;">HOME</a></li>
-            <li class="nav-link active ms-md-5 ms-4 "><a href="#" class="text-white">ABOUT</a></li>
-            <li class="nav-link active ms-md-5 ms-4 "><a href="#" class="text-white">TEAM</a></li>
-            <li class="nav-link active ms-md-5 ms-4 "><a href="#" class="text-white">GALLERY</a></li>
-            <li class="nav-link active ms-md-5 ms-4 "><a href="#" class="text-white">BLOG</a></li>
-
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-
-  <!-- 輪播圖 -->
-  <div class="Carousel_box text-xl-start">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="rowSlide_1 text-start">
-            <div class="fs-8 fw-bold">PROVIDING QUALITY PRODUCTS </div>
-            <div class="mt-4 " style="font-size: 2rem; font-weight: 500;">ORGANIC</div>
-            <div class="mt-1" style="font-size: 2rem; font-weight: 500;"> FRUITS</div>
-            <div class="fs-3 mt-3" style="font-weight: 300;">100% HEALTHY & </div>
-            <div class="fs-3" style="font-weight: 300;">AFFORDABLE</div>
-            <div class="mt-3 ">
-              <button type="button" class="btn btn-success btn-lg  fs-7  p-3 ps-5 pe-5 swiper_btn">ABOUT
-                US</button>
-              <!-- <button type="button" class="btn btn-success btn-sm  fs-7  p-3 ps-5 pe-5 swiper_btn">ABOUT US</button> -->
-
-            </div>
-
-          </div>
-          <img src="./images/slide-1.jpg">
-        </div>
-        <div class="swiper-slide">
-          <div class="rowSlide_1 text-start">
-            <div class="fs-8 fw-bold">SUMMER DISCOUNTS UP TO 40%
-            </div>
-            <div class="mt-4 " style="font-size: 2rem; font-weight: 500;">A WIDE</div>
-            <div class="mt-1" style="font-size: 2rem; font-weight: 500;">VARIETY</div>
-            <div class="fs-3 mt-3" style="font-weight: 300;">OF DIFFERENT FRUITS </div>
-            <div class="fs-3" style="font-weight: 300;">AFFORDABLE</div>
-            <div class="mt-3 "><button type="button"
-                class="btn btn-success btn-lg  fs-7   shadow p-3 ps-5 pe-5 swiper_btn">ABOUT US</button>
-            </div>
-
-          </div>
-          <img src="./images/slide-2.jpg">
-        </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </div>
-
-  <!-- banner/icon -->
-  <div class="banner ">
-    <div class="banner_item row " style="margin-left:0">
-
-      <div class="col-12  d-sm-none d-block text-center" style="font-size: 3.5rem; ">
-        <div class="fw-light spacing-2" style="margin-top: -2rem;">WHY</div>
-        <div class="fw-semibold spacing-4" style="margin-top: -2rem;">ORGANIC?</div>
-      </div>
-
-      <div class="col-12 d-none d-sm-block text-center" style="font-size: 3.5rem; ">
-        <span class="fw-light spacing-2" style="margin-top: -2rem;">WHY</span>
-        <span class="fw-semibold spacing-1" style="margin-top: -2rem;">ORGANIC?</span>
-      </div>
-
-
-
-      <div class="col-12 col-md-6 ">
-        <div class="card text-center mt-3 mt-md-4 " style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
-          <div class="card-body">
-            <div class="mb-xxl-3">
-              <i class="fa-regular fa-lemon" style="font-size: 3.5rem;"></i>
-            </div>
-            <div class=" card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">ALWAYS FRESH</div>
-            <p class="card-text fs-7 " style="color: #999;">We deliver our products always fresh & organic so
-              that you could enjoy your meal. </p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-12 col-md-6">
-        <div class="card text-center mt-4 " style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
-          <div class="card-body">
-            <div class="mb-xxl-3">
-              <i class="fa-regular fa-flag" style="font-size: 3.5rem;"></i>
-            </div>
-            <div class=" card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">MODERN FARM</div>
-            <p class="card-text fs-7" style="color: #999;">Our farm combines modern technologies, innovations, and
-              trusted farming traditions. </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6">
-        <div class="card text-center mt-4 " style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
-          <div class="card-body">
-            <div class="mb-xxl-3">
-              <i class="fa-brands fa-viadeo" style="font-size: 3.5rem;"></i>
-            </div>
-            <div class=" card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">100% ORGANIC</div>
-            <p class="card-text fs-7" style="color: #999;">We adhere to our organic philosophy, which implies avoiding
-              pesticides. </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="card text-center mt-4 " style="border-radius:10px; box-shadow: 0.8px 0.8px 10px #999; ">
-          <div class="card-body">
-            <div class="mb-xxl-3">
-              <i class="fa-brands fa-tencent-weibo" style="font-size: 3.5rem;"></i>
-            </div>
-            <div class=" card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">NO PESTICIDES </div>
-            <p class="card-text fs-7" style="color: #999;">Our farming technologies are designed to avoid any pesticides
-              in the fruits we offer. </p>
-          </div>
-        </div>
+        </nav>
       </div>
     </div>
 
+    <!-- 輪播圖 -->
+    <div class="Carousel_box text-xl-start">
+      <div class="swiperCarousel mySwiperCarousel">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slideCarousel">
+            <div class="rowSlide_1 text-start">
+              <div class="fs-8 fw-bold">PROVIDING QUALITY PRODUCTS</div>
+              <div class="mt-4" style="font-size: 2rem; font-weight: 500">ORGANIC</div>
+              <div class="mt-1" style="font-size: 2rem; font-weight: 500">FRUITS</div>
+              <div class="fs-3 mt-3" style="font-weight: 300">100% HEALTHY &</div>
+              <div class="fs-3" style="font-weight: 300">AFFORDABLE</div>
+              <div class="mt-3">
+                <button type="button" class="btn btn-theme-green btn-lg fs-7 p-3 ps-5 pe-5 theme_green_btn text-white">
+                  ABOUT US
+                </button>
+                <!-- <button type="button" class="btn btn-success btn-sm  fs-7  p-3 ps-5 pe-5 theme_green_btn">ABOUT US</button> -->
+              </div>
+            </div>
+            <img src="./images/slide-1.jpg" />
+          </div>
+          <div class="swiper-slide swiper-slideCarousel">
+            <div class="rowSlide_1 text-start">
+              <div class="fs-8 fw-bold">SUMMER DISCOUNTS UP TO 40%</div>
+              <div class="mt-4" style="font-size: 2rem; font-weight: 500">A WIDE</div>
+              <div class="mt-1" style="font-size: 2rem; font-weight: 500">VARIETY</div>
+              <div class="fs-3 mt-3" style="font-weight: 300">OF DIFFERENT FRUITS</div>
+              <div class="fs-3" style="font-weight: 300">AFFORDABLE</div>
+              <div class="mt-3">
+                <button type="button" class="btn btn-success btn-lg fs-7 shadow p-3 ps-5 pe-5 theme_green_btn">
+                  ABOUT US
+                </button>
+              </div>
+            </div>
+            <img src="./images/slide-2.jpg" />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
 
+    <!-- banner/icon -->
+    <div class="banner">
+      <div class="banner_item row" style="margin-left: 0">
+        <div class="col-12 d-sm-none d-block text-center text-lg-start" style="font-size: 3.5rem">
+          <div class="fw-light spacing-2" style="margin-top: -2rem">WHY</div>
+          <div class="fw-semibold spacing-4" style="margin-top: -2rem">ORGANIC?</div>
+        </div>
 
-    <img src="./images/bg-image-1.jpg">
-  </div>
+        <div class="col-12 d-none d-sm-block text-center text-lg-start" style="font-size: 3.5rem">
+          <span class="fw-light spacing-2" style="margin-top: -2rem">WHY</span>
+          <span class="fw-semibold spacing-1" style="margin-top: -2rem">ORGANIC?</span>
+        </div>
 
+        <div class="col-12 col-md-6">
+          <div class="card text-center mt-3 mt-md-4" style="border-radius: 10px; box-shadow: 0.8px 0.8px 10px #999">
+            <div class="card-body">
+              <div class="mb-xxl-3">
+                <i class="fa-regular fa-lemon" style="font-size: 3.5rem"></i>
+              </div>
+              <div class="card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">ALWAYS FRESH</div>
+              <p class="card-text fs-7" style="color: #999">
+                We deliver our products always fresh & organic so that you could enjoy your meal.
+              </p>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-12 col-md-6">
+          <div class="card text-center mt-4" style="border-radius: 10px; box-shadow: 0.8px 0.8px 10px #999">
+            <div class="card-body">
+              <div class="mb-xxl-3">
+                <i class="fa-regular fa-flag" style="font-size: 3.5rem"></i>
+              </div>
+              <div class="card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">MODERN FARM</div>
+              <p class="card-text fs-7" style="color: #999">
+                Our farm combines modern technologies, innovations, and trusted farming traditions.
+              </p>
+            </div>
+          </div>
+        </div>
 
-  <!-- 其他 -->
-  <div class="other"></div>
+        <div class="col-12 col-md-6">
+          <div class="card text-center mt-4" style="border-radius: 10px; box-shadow: 0.8px 0.8px 10px #999">
+            <div class="card-body">
+              <div class="mb-xxl-3">
+                <i class="fa-brands fa-viadeo" style="font-size: 3.5rem"></i>
+              </div>
+              <div class="card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">100% ORGANIC</div>
+              <p class="card-text fs-7" style="color: #999">
+                We adhere to our organic philosophy, which implies avoiding pesticides.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card text-center mt-4" style="border-radius: 10px; box-shadow: 0.8px 0.8px 10px #999">
+            <div class="card-body">
+              <div class="mb-xxl-3">
+                <i class="fa-brands fa-tencent-weibo" style="font-size: 3.5rem"></i>
+              </div>
+              <div class="card-title fs-2 spacing-4 fw-semibold spacing-lg-1 fs-lg-4 mt-lg-3">NO PESTICIDES</div>
+              <p class="card-text fs-7" style="color: #999">
+                Our farming technologies are designed to avoid any pesticides in the fruits we offer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- bootstrap主程式 -->
-  <script src="./js/bootstrap.bundle.js"></script>
-  <!-- JQ -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
-    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
-    crossorigin='anonymous'></script>
-  <!-- vue -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.10/vue.global.min.js'
-    integrity='sha512-es4vSPtFlEKtmABZjNbGIagxq+4vAymgRWKhEt4C7Z+R8nHasGt/1H5JCBnUILChOXg1i1bImtqHul/LM7UxlQ=='
-    crossorigin='anonymous'></script>
-  <!-- swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <img src="./images/bg-image-1.jpg" />
+    </div>
 
-  <script>
+    <!-- OUR FARM(第五部分) -->
+    <div class="farm_box pt-4">
+      <div class="farm_box2">
+        <div class="p-3">
+          <div class="row">
+            <!-- 第一部分 -->
+            <div class="farm_text col-12 col-md-6 pe-md-5 pe-lg-7">
+              <div class="text-theme-green spacing-3 fs-6 fw-bold fs-md-5 spacing-md-2">BEST FRUITS SINCE 1999</div>
+              <div class="farm_text02 spacing-3 fw-bold mt-2">OUR FARM</div>
+              <div class="farm_text03 spacing-3 fw-lighte mb-3">WHO WE ARE</div>
 
-    //  Vue
-    const { ref } = Vue
+              <!-- 導覽 -->
+              <div class="">
+                <nav class="nav" role="tablist">
+                  <a class="nav-link active fw-bold fs-8 farm_active_text" href="#farm_text_1" data-bs-toggle="tab"
+                    >ABOUT</a
+                  >
+                  <a class="nav-link fw-bold fs-8 farm_active_text" href="#farm_text_2" data-bs-toggle="tab"
+                    >OUR MISSION</a
+                  >
+                  <a class="nav-link fw-bold fs-8 farm_active_text" href="#farm_text_3" data-bs-toggle="tab"
+                    >OUR VISION</a
+                  >
+                </nav>
+              </div>
 
-    Vue.createApp({
-      setup() {
-        const searchOpen = ref(false)
-        return { searchOpen }
+              <!-- 導覽的內容 -->
+              <div class="tab-content mt-3 fs-7 mb-4" style="color: #888888">
+                <div id="farm_text_1" class="tab-pane fade show active" role="tabpanel">
+                  <p>
+                    Since its foundation, Orange offers best organic fruits for local residents, fruit markets, and
+                    guests of our city. We are dedicated to improving your healthy food standards.
+                  </p>
+                </div>
+
+                <div id="farm_text_2" class="tab-pane fade" role="tabpanel">
+                  <p>
+                    Since its foundation, Orange offers best organic fruits for local residents, fruit markets, and
+                    guests of our city. We are dedicated to improving your healthy food standards.
+                  </p>
+                </div>
+
+                <div id="farm_text_3" class="tab-pane fade" role="tabpanel">
+                  <p>
+                    Since its foundation, Orange offers best organic fruits for local residents, fruit markets, and
+                    guests of our city. We are dedicated to improving your healthy food standards.
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                class="btn mt-1 btn-theme-green btn-lg fs-7 p-3 ps-5 pe-5 theme_green_btn text-white"
+              >
+                READ MORE
+              </button>
+            </div>
+
+            <!-- 第二部分 -->
+            <div class="farm_img col-12 col-md-6 mt-4 mt-md-0">
+              <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="./images/about-1-634x373.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/about-2-634x373-1.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/about-3-634x373.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/about-4-634x373.jpg" />
+                  </div>
+                </div>
+              </div>
+              <div thumbsSlider="" class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide swiper-slide01">
+                    <img src="./images/about-1-634x373.jpg" />
+                  </div>
+                  <div class="swiper-slide swiper-slide02">
+                    <img src="./images/about-2-634x373-1.jpg" />
+                  </div>
+                  <div class="swiper-slide swiper-slide03">
+                    <img src="./images/about-3-634x373.jpg" />
+                  </div>
+                  <div class="swiper-slide swiper-slide04">
+                    <img src="./images/about-4-634x373.jpg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 其他 -->
+    <div class="other"></div>
+
+    <!-- bootstrap主程式 -->
+    <script src="./js/bootstrap.bundle.js"></script>
+    <!-- JQ -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- vue -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.10/vue.global.min.js"
+      integrity="sha512-es4vSPtFlEKtmABZjNbGIagxq+4vAymgRWKhEt4C7Z+R8nHasGt/1H5JCBnUILChOXg1i1bImtqHul/LM7UxlQ=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      //  Vue
+      const { ref } = Vue
+
+      Vue.createApp({
+        setup() {
+          const searchOpen = ref(false)
+          return { searchOpen }
+        }
+      }).mount('#app')
+
+      // swiper 輪播圖
+      var swiper = new Swiper('.mySwiperCarousel', {
+        loop: true,
+        effect: 'fade', // 使用淡入淡出效果
+        // autoplay: {
+        //   delay: 500000, // 切換間隔時間 (毫秒)
+        //   disableOnInteraction: false // 使用者互動後是否停止自動播放
+        // },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      })
+
+      // 第五部分 導覽
+      $('.nav-link').on('shown.bs.tab', function (e) {
+        // 移除所有 nav-link 的文字顏色
+        $('.nav-link').removeClass('farm_active_text')
+
+        // 將點擊的 nav-link 添加文字綠色樣式
+        $(this).addClass('farm_active_text')
+      })
+
+      // 第五部分 swiper  Thumbs gallery
+      var swiperThumbs = new Swiper('.mySwiper', {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true
+      })
+
+      var swiperGallery = new Swiper('.mySwiper2', {
+        loop: true,
+        spaceBetween: 10,
+        thumbs: {
+          swiper: swiperThumbs
+        }
+      })
+
+      swiperThumbs.on('click', function () {
+        var clickedIndex = swiperThumbs.clickedIndex
+        swiperGallery.slideTo(clickedIndex, 300, false)
+        updateThumbsBorder(clickedIndex)
+      })
+
+      function updateThumbsBorder(index) {
+        var thumbs = document.querySelectorAll('.mySwiper .swiper-slide')
+
+        // 移除所有綠色邊框
+        thumbs.forEach(function (thumb) {
+          thumb.classList.remove('green-border')
+        })
+
+        // 添加綠色邊框到點擊的小圖
+        thumbs[index].classList.add('green-border')
       }
-    }).mount('#app')
 
-
-    // swiper 輪播圖
-    // var swiper = new Swiper(".mySwiper", {
-    //   loop: true,
-    //   effect: 'fade', // 使用淡入淡出效果
-    //   autoplay: {
-    //     delay: 500000, // 切換間隔時間 (毫秒)
-    //     disableOnInteraction: false, // 使用者互動後是否停止自動播放
-    //   },
-    //   navigation: {
-    //     nextEl: ".swiper-button-next",
-    //     prevEl: ".swiper-button-prev",
-    //   },
-    // });
-  </script>
-</body>
-
+      // 初始化時設置第一個小圖有綠色邊框
+      updateThumbsBorder(0)
+    </script>
+  </body>
 </html>
