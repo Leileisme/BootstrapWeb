@@ -4,6 +4,17 @@ $utilities: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $utilities: map-merge(
   (
+    'border-radius': (
+      property: border-radius,
+      values: (
+        0: 0,
+        1: 5px,
+        2: 10px,
+        3: 15px,
+        4: 20px,
+        circle: 50%
+      )
+    ),
     'letter-spacing': (
       responsive: true,
       property: letter-spacing,

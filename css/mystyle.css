@@ -311,6 +311,83 @@
   display: block;
 }
 
+/* ourTeam (第7區) */
+.ourTeam_box {
+  /* height: 1500px; */
+  width: 100%;
+  background-color: #fff;
+}
+
+.ourTeam_title {
+  font-size: 2rem;
+}
+
+.ourTeam_box .card-body a {
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.ourTeam_box .card-body a:hover {
+  color: rgb(80, 161, 114);
+  font-size: 1.2rem;
+}
+
+/* connected (第8區) */
+.connected_box {
+  height: 600px;
+  width: 100%;
+  background-color: #5c5c5c;
+  position: relative;
+  background: url(../images/parallax-1.jpg) no-repeat center/cover;
+  color: #fff;
+}
+
+.connected_text01 {
+  font-size: 3rem;
+}
+
+.connected_text02 {
+  font-size: 2.2rem;
+  margin-top: -10px;
+}
+
+.connected_input {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 2px #fff solid;
+  width: 100%;
+}
+
+.connected_input::placeholder {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.connected_input:focus {
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+.connected_box2 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.connected_btn {
+  width: 100%;
+}
+
+/* testimonial(第9區)  */
+.carousel02_box {
+  background-color: #f1f1f1;
+}
+
+.carousel02_title {
+  font-size: 2.2rem;
+}
+
 @media (min-width: 576px) {
   /* header 營業時間與搜尋(非導覽列) */
   .header {
@@ -340,7 +417,7 @@
     height: 1100px;
   }
 
-  /* FARM(第五部分) */
+  /* FARM(第5部分) */
 
   .farm_text02 {
     font-size: 3rem;
@@ -348,6 +425,10 @@
 
   .farm_text03 {
     font-size: 2.3rem;
+  }
+
+  .ourTeam_box .card {
+    text-align: center !important;
   }
 }
 
@@ -382,6 +463,19 @@
 
   .Featured_Offers_text01 {
     font-size: 3.3rem;
+  }
+  /* ourTeam (第7區) */
+  .ourTeam_title {
+    font-size: 4.5rem;
+  }
+
+  .ourTeam_text {
+    font-size: 1.15rem;
+  }
+
+  /* connected (第8區) */
+  .connected_box {
+    height: 330px;
   }
 }
 
@@ -419,5 +513,22 @@
     left: 50%;
     /* top: 50%; */
     transform: translateX(-50%);
+  }
+
+  /* ourTeam (第7區) */
+  .ourTeam_box {
+    /* position: relative; */
+    width: 80%;
+    display: flex;
+    margin: auto;
+  }
+
+  .ourTeam_box2 {
+    width: 100%;
+  }
+
+  /* connected (第8區)  */
+  .connected_box2 {
+    width: 80%;
   }
 }
