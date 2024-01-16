@@ -1,8 +1,13 @@
-* {
+/* * 不含為元素 BS有寫類似的 */
+/* * {
   margin: 0;
   padding: 0;
   list-style: none;
   font-family: 'Noto Sans TC', sans-serif;
+} */
+
+body {
+  overflow-x: hidden;
 }
 
 /* header 營業時間與搜尋(非導覽列) */
@@ -388,6 +393,16 @@
   font-size: 2.2rem;
 }
 
+/* our blog(第10區) */
+.ourBlog_box {
+  width: 100%;
+  background-color: yellowgreen;
+}
+
+.ourBlog_box_title {
+  font-size: 2.2rem;
+}
+
 @media (min-width: 576px) {
   /* header 營業時間與搜尋(非導覽列) */
   .header {
@@ -429,6 +444,11 @@
 
   .ourTeam_box .card {
     text-align: center !important;
+  }
+
+  /* 第9區 */
+  .carousel02_title {
+    font-size: 3.2rem;
   }
 }
 
@@ -530,5 +550,11 @@
   /* connected (第8區)  */
   .connected_box2 {
     width: 80%;
+  }
+
+  /* testimonial(第9區) */
+  .carousel02_box2 {
+    width: 80%;
+    margin: auto;
   }
 }
