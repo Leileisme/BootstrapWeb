@@ -17,6 +17,9 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <!-- lightbox -->
+    <link rel="stylesheet" href="./css/magnific-popup.css">
+    <link rel="stylesheet" href="./css/magnific-popup_self.css">
     <!-- 我的CSS -->
     <link rel="stylesheet" href="./css/mystyle.css" />
     <link rel="stylesheet" href="./css/swiper.css" />
@@ -32,7 +35,7 @@
     <!-- 引入vue -->
 
     <div id="app">
-      <!-- header 營業時間與搜尋(非導覽列) -->
+      <!-- 1.header 營業時間與搜尋(非導覽列) -->
       <div class="header text-center text-light p-3 position-relative">
         <p class="fs-7 text-sm-start ms-xl-11 fw-semibold">Opening times: Monday - Friday: 08AM-06PM</p>
 
@@ -52,7 +55,7 @@
         </transition>
       </div>
 
-      <!-- 導覽列與聯絡資訊 -->
+      <!-- 2.導覽列與聯絡資訊 -->
       <div class="navbar_box">
         <!-- 手機版顯示 - logo -->
         <div class="logoText text-center d-block d-sm-none">
@@ -125,7 +128,7 @@
       </div>
     </div>
 
-    <!-- 輪播圖 -->
+    <!-- 3.輪播圖 -->
     <div class="Carousel_box text-xl-start">
       <div class="swiperCarousel mySwiperCarousel">
         <div class="swiper-wrapper">
@@ -166,7 +169,7 @@
       </div>
     </div>
 
-    <!-- banner/icon -->
+    <!-- 4.banner/icon -->
     <div class="banner">
       <div class="banner_item row" style="margin-left: 0">
         <div class="col-12 d-sm-none d-block text-center" style="font-size: 3.5rem">
@@ -238,7 +241,7 @@
       <img src="./images/bg-image-1.jpg" />
     </div>
 
-    <!-- ourFarm (第5區) -->
+    <!-- 5.ourFarm  -->
     <div class="farm_box pt-4">
       <div class="farm_box2">
         <div class="p-3">
@@ -332,7 +335,7 @@
       </div>
     </div>
 
-    <!-- Featured_Offers (第6區) -->
+    <!-- 6.Featured_Offers -->
     <div class="Featured_Offers_box">
       <div class="row Featured_Offers_row">
         <div class="col-12 text-center mb-5">
@@ -350,23 +353,35 @@
           </div>
         </div>
 
-        <div class="col-12 col-md-4 p-0 Featured_Offers_img">
-          <img src="./images/masonry-fullwidth-gallery-1-480x314.jpg" />
+        <div class="col-12 col-md-4 p-0 Featured_Offers_img" >
+          <a class="image-popup-no-margins" href="./images/masonry-fullwidth-gallery-1-480x314.jpg">
+            <img src="./images/masonry-fullwidth-gallery-1-480x314.jpg" />
+          </a>
         </div>
         <div class="col-12 col-md-4 p-0 Featured_Offers_img">
-          <img src="./images/masonry-fullwidth-gallery-2-480x314.jpg" />
+          <a class="image-popup-no-margins" href="./images/masonry-fullwidth-gallery-2-480x314.jpg">
+            <img src="./images/masonry-fullwidth-gallery-2-480x314.jpg" />
+          </a>
         </div>
         <div class="col-12 col-md-4 p-0 Featured_Offers_img">
+          <a class="image-popup-no-margins" href="./images/masonry-fullwidth-gallery-4-480x314.jpg">
           <img src="./images/masonry-fullwidth-gallery-4-480x314.jpg" />
+          </a>
         </div>
         <div class="col-12 col-md-4 p-0 Featured_Offers_img">
+          <a class="image-popup-no-margins" href="./images/masonry-fullwidth-gallery-5-480x314.jpg">
           <img src="./images/masonry-fullwidth-gallery-5-480x314.jpg" />
+          </a>
         </div>
         <div class="col-12 col-md-4 p-0 Featured_Offers_img">
+          <a class="image-popup-no-margins" href="./images/masonry-fullwidth-gallery-6-480x314.jpg">
           <img src="./images/masonry-fullwidth-gallery-6-480x314.jpg" />
+          </a>
         </div>
         <div class="col-12 col-md-4 p-0 Featured_Offers_img">
+          <a class="image-popup-no-margins" href="./images/masonry-fullwidth-gallery-7-480x314.jpg">
           <img src="./images/masonry-fullwidth-gallery-7-480x314.jpg" />
+          </a>
         </div>
 
         <div class="col-12 m-5 mb-6">
@@ -380,15 +395,14 @@
       </div>
     </div>
 
-    <!-- ourTeam (第7區) -->
+    <!-- 7.ourTeam -->
     <div class="ourTeam_box pt-4 pb-4 pt-lg-6 pb-lg-6">
       <div class="ourTeam_box2">
         <div class="ps-3 pe-3 ps-md-3 pe-md-3">
           <div class="row">
             <div class="col-12 text-center ourTeam_title fw-semibold spacing-3 pb-4">OUR TEAM</div>
-
             <!-- 1 -->
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-md-4 mb-3 ourTeam_card">
               <div class="card text-center border-0">
                 <img src="./images/team-1-370x334.jpg" class="card-img-top" style="border-radius: 10px" />
                 <div class="card-body">
@@ -404,7 +418,7 @@
               </div>
             </div>
             <!-- 2 -->
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-md-4 mb-3 ourTeam_card">
               <div class="card text-center border-0">
                 <img src="./images/team-2-370x334.jpg" class="card-img-top" style="border-radius: 10px" />
                 <div class="card-body">
@@ -420,7 +434,7 @@
               </div>
             </div>
             <!-- 3 -->
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 ourTeam_card">
               <div class="card text-center border-0">
                 <img src="./images/team-3-370x334.jpg" class="card-img-top" style="border-radius: 10px" />
                 <div class="card-body">
@@ -441,7 +455,7 @@
       </div>
     </div>
 
-    <!-- connected (第8區) -->
+    <!-- 8.connected -->
     <div class="connected_box">
       <div class="connected_box2">
         <div class="row ps-3 pe-3 align-items-center">
@@ -468,7 +482,7 @@
       </div>
     </div>
 
-    <!-- testimonial(第9區) -->
+    <!-- 9.testimonial -->
     <div class="carousel02_box position-relative">
       <div class="carousel02_box2">
         <div class="row ps-4 pe-4 pt-5 pb-5">
@@ -558,7 +572,7 @@
       </div>
     </div>
 
-    <!-- our blog(第10區) -->
+    <!-- 10.our blog -->
     <div class="ourBlog_box_box position-relative">
       <div class="ourBlog_box_box2">
         <div class="row ps-4 pe-4 pt-5 pb-5">
@@ -573,7 +587,7 @@
                   <div class="card" style="width: 90%; box-shadow: 1px 1px 4px #ddd">
                     <img src="./images/israel-egio-51174-unsplash.jpg" class="card-img-top" />
                     <div class="card-body">
-                      <p class="card-text fs-1 fw-semibold" style="text-align: left">
+                      <p class="card-text fs-1 fs-sm-4 fw-semibold" style="text-align: left">
                         How Can Salmon be Raised Organically in Fish Farms?
                       </p>
                       <p class="card-text2" style="text-align: left; color: #555">December 6, 2018</p>
@@ -581,7 +595,66 @@
                   </div>
                 </div>
                 <!-- 輪播2 -->
-                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide swiper-slide2 m-1">
+                  <div class="card" style="width: 90%; box-shadow: 1px 1px 4px #ddd">
+                    <img src="./images/rawpixel-603025-unsplash.jpg" class="card-img-top" />
+                    <div class="card-body">
+                      <p class="card-text fs-1 fs-sm-4 fw-semibold" style="text-align: left">
+                        How to Make Your Breakfast Easy and Yummy
+                      </p>
+                      <p class="card-text2" style="text-align: left; color: #555">December 6, 2018</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- 輪播3 -->
+                <div class="swiper-slide swiper-slide2 m-1">
+                  <div class="card" style="width: 90%; box-shadow: 1px 1px 4px #ddd">
+                    <img src="./images/veeterzy-82538-unsplash.jpg" class="card-img-top" />
+                    <div class="card-body">
+                      <p class="card-text fs-1 fs-sm-4 fw-semibold" style="text-align: left">
+                        Everyday Dinner Choices for a Healthier, Happier You
+                      </p>
+                      <p class="card-text2" style="text-align: left; color: #555">December 6, 2018</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- 輪播4 -->
+                <div class="swiper-slide swiper-slide2 m-1">
+                  <div class="card" style="width: 90%; box-shadow: 1px 1px 4px #ddd">
+                    <img src="./images/bodie-pyndus-57660-unsplash.jpg" class="card-img-top" />
+                    <div class="card-body">
+                      <p class="card-text fs-1 fs-sm-4 fw-semibold" style="text-align: left">
+                        Standardizing the Organic Industry in the USA
+                      </p>
+                      <p class="card-text2" style="text-align: left; color: #555">December 6, 2018</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- 輪播5 -->
+                <div class="swiper-slide swiper-slide2 m-1">
+                  <div class="card" style="width: 90%; box-shadow: 1px 1px 4px #ddd">
+                    <img src="./images/ashim-d-silva-36117-unsplash.jpg" class="card-img-top" />
+                    <div class="card-body">
+                      <p class="card-text fs-1 fs-sm-4 fw-semibold" style="text-align: left">
+                        10 Health Benefits: What Secrets Do Watermelons Keep?
+                      </p>
+                      <p class="card-text2" style="text-align: left; color: #555">December 4, 2018</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- 輪播6 -->
+                <div class="swiper-slide swiper-slide2 m-1">
+                  <div class="card" style="width: 90%; box-shadow: 1px 1px 4px #ddd">
+                    <img src="./images/katherine-chase-246696-unsplash.jpg" class="card-img-top" />
+                    <div class="card-body">
+                      <p class="card-text fs-1 fs-sm-4 fw-semibold" style="text-align: left">
+                        Lemons & Limes: Why They are Especially Tasty in Winter
+                      </p>
+                      <p class="card-text2" style="text-align: left; color: #555">December 4, 2018</p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -589,9 +662,101 @@
       </div>
     </div>
 
-    <!-- 其他 -->
-    <div class="other"></div>
+    <!-- 11.logos -->
+    <div class="logos_box" >
+      <div class="logos_box2">
+      <div class="row text-center pt-5 pb-5 mx-auto">
+        <div class="w-md-20"><img src="./images/clients-1-120x114.webp" alt=""></div>
+        <div class="w-md-20 mt-3"><img src="./images/clients-2-105x118.webp" alt=""></div>
+        <div class="w-md-20 mt-3"><img src="./images/clients-3-111x98.webp" alt=""></div>
+        <div class="w-md-20 mt-3"><img src="./images/clients-4-122x92.webp" alt=""></div>
+        <div class="w-md-20 mt-3"><img src="./images/clients-5-112x112.webp" alt=""></div>
+      </div>
+      </div>
+    </div>
 
+    <!-- 12.connection -->
+    <div class="connection_box">
+    <div class="connection_box2">
+
+      <div class="pt-5 pb-5 p-3">
+        <div class="row">
+          <!-- A -->
+          <div class="col-12 col-md-4 text-white mb-5">
+            <div class="fw-bold fs-5">VISIT OUR FARM</div>
+            <div class="connection_line mb-3"></div>
+            <div class="row">
+              <!-- icon1 -->
+              <div class="col-1 fs-1 opacity-25 me-2 mb-4"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="col-8 fs-7 fw-semibold">
+                <div>523 Sylvan Ave, 5th Floor</div>
+                <div>Mountain View, CA 94041 USA</div>
+                </div>
+            </div>
+            <!-- icon2 -->
+            <div class="row">
+              <div class="col-1 fs-2 opacity-25 me-2"><i class="fa-regular fa-clock"></i></div>
+              <div class="col-8 fs-7 fw-semibold">
+                <div>Weekdays:08:00am - 08:00pm</div>
+                <div>Weekends:10:00am - 06:00pm</div>
+                </div>
+            </div>
+          </div>
+          <!-- B -->
+          <div class="col-12 col-md-3 text-white mb-5">
+            <div class="fw-bold fs-5">QUICK LINKS</div>
+            <div class="connection_line mb-3"></div>
+            <div><a href="" class="text-theme-green" >Home</a></div>
+            <div><a href="">About</a></div>
+            <div><a href="">Team</a></div>
+            <div><a href="">Gallery</a></div>
+            <div><a href="">Blog</a></div>
+          </div>
+          <!-- C -->
+          <div class="col-12 col-md-5 text-white mb-4">
+            <!-- 字 -->
+            <div class="mb-4">
+              <div class="fw-bold fs-5">GET IN TOUCH</div>
+              <div class="connection_line mb-3"></div>
+              <div>Subscribe to our newsletter to receive weekly news, updates, special offers, and exclusive discounts.</div>
+            </div>
+            <!-- input -->
+            <!-- input1 -->
+            <div class="row">
+              <div class="col-12 mt-sm-5 col-md-5 ms-0 mt-md-4">
+                <input type="email" class="form-control connected_input connection_box_input" placeholder="Enter your email address" />
+              </div>
+              <!-- input2 -->
+              <div class="col-12 col-md-5 col-md-3 text-center">
+                <button
+                type="submit"
+                class="btn mt-3 btn-theme-green btn-lg fs-7 p-3 ps-5 pe-5 theme_green_btn text-white connected_btn connection_box_btn"
+                >SUBSCRIBE </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13.footer -->
+  <div class="footer_box">
+    <div class="footer_box2 p-3 pt-4 pb-4 d-md-flex justify-content-between pb-md-0">
+   
+
+        <div class="footer_icon_box mb-3 d-flex justify-content-center align-content-center">
+          <div class="footer_icon me-3"><i class="fa-brands fa-facebook-f"></i></div>
+          <div class="footer_icon me-3"><i class="fa-brands fa-twitter"></i></div>
+          <div class="footer_icon me-3"><i class="fa-brands fa-instagram"></i></div>
+          <div class="footer_icon "><i class="fa-brands fa-google-plus-g"></i></div>
+        </div>
+
+        <div class="text-white text-center fs-6">© 2018 Frutti. All rights reserved. Privacy Policy. Theme design by Zemez</div>
+
+    </div>
+    
+  </div>
     <!-- bootstrap主程式 -->
     <script src="./js/bootstrap.bundle.js"></script>
     <!-- JQ -->
@@ -608,7 +773,15 @@
     ></script>
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <!-- gsap -->
+    <script src="./gsap/gsap.js"></script>
+    <!-- gsap plug -->
+    <script src="./gsap/ScrollTrigger.js"></script>
+    <!-- lightbox -->
+    <script src="./js/jquery.magnific-popup.js"></script>
+    <script src="./js/jquery.magnific-popup_self.js"></script>
+    <!-- my js -->
+    <script src="./js/all_js.js"></script>
     <script>
       //  Vue
       const { ref } = Vue
@@ -620,76 +793,8 @@
         }
       }).mount('#app')
 
-      // swiper 輪播圖
-      var swiper = new Swiper('.mySwiperCarousel', {
-        loop: true,
-        effect: 'fade', // 使用淡入淡出效果
-        // autoplay: {
-        //   delay: 500000, // 切換間隔時間 (毫秒)
-        //   disableOnInteraction: false // 使用者互動後是否停止自動播放
-        // },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
-      })
-
-      // 第五部分 導覽
-      $('.nav-link').on('shown.bs.tab', function (e) {
-        // 移除所有 nav-link 的文字顏色
-        $('.nav-link').removeClass('farm_active_text')
-
-        // 將點擊的 nav-link 添加文字綠色樣式
-        $(this).addClass('farm_active_text')
-      })
-
-      // 第五部分 swiper  Thumbs gallery
-      var swiperThumbs = new Swiper('.mySwiper', {
-        loop: true,
-        spaceBetween: 10,
-        slidesPerView: 4,
-        freeMode: true,
-        watchSlidesProgress: true
-      })
-
-      var swiperGallery = new Swiper('.mySwiper2', {
-        loop: true,
-        spaceBetween: 10,
-        thumbs: {
-          swiper: swiperThumbs
-        }
-      })
-
-      swiperThumbs.on('click', function () {
-        var clickedIndex = swiperThumbs.clickedIndex
-        swiperGallery.slideTo(clickedIndex, 300, false)
-        updateThumbsBorder(clickedIndex)
-      })
-
-      function updateThumbsBorder(index) {
-        var thumbs = document.querySelectorAll('.mySwiper .swiper-slide')
-
-        // 移除所有綠色邊框
-        thumbs.forEach(function (thumb) {
-          thumb.classList.remove('green-border')
-        })
-
-        // 添加綠色邊框到點擊的小圖
-        thumbs[index].classList.add('green-border')
-      }
-
-      // 初始化時設置第一個小圖有綠色邊框
-      updateThumbsBorder(0)
-
-      // 第9區
-      var swiperCarousel2 = new Swiper('.mySwiperCarousel2', {
-        loop: true
-      })
-
-      // 第10區
-      var swiperCarousel2 = new Swiper('.mySwiper_ourBlog', {
-        loop: true
-      })
+      
+   
     </script>
   </body>
 </html>
