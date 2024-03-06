@@ -1,6 +1,6 @@
 # BootstrapWeb 與互動套件
 
-使用套件：vue、swiperjs、gsap、lightbox 燈箱效果
+使用套件總覽：vue、swiperjs、gsap、lightbox 燈箱效果
 
 [馬上觀看](https://leileisme.github.io/Bootstrap_Web/)
 
