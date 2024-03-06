@@ -1,4 +1,4 @@
-# BootstrapWeb 與互動套件
+# Bootstrap RWD 響應式網頁與互動套件
 
 使用套件總覽：vue、swiperjs、gsap、lightbox 燈箱效果
 
